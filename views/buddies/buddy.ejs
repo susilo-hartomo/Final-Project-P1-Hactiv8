@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <%- include('../partials/style') %>
+        <title>Orion Hub</title>
+    </head>
+    <body>
+        <%- include('../partials/navbar') %>
+        <div class="d-flex justify-content-around">
+            <h1>ORION BUDDY</h1>
+        </div>
+        <div class="d-flex justify-content-around">
+            <div class="d-flex justify-content-end"></div>
+                <a href="/buddies/add"><button type="button" class="btn btn-primary">Add Buddy</button></a>
+            </div>
+        </div>
+        <br>
+        <div class="d-flex justify-content-around">
+            <table class="table table-hover" style="width: 60%;">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Options</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <% buddies.forEach(el => { %>
+                    <tr>
+                        <td> <%= el.id %> </td>
+                        <td> <%= el.getFullName() %> </td>
+                        <td> <%= el.email %> </td>
+                        <td>
+                            <a href="/buddies/edit/<%= el.id %>"><button type="button" class="btn btn-info">Edit</button></a> 
+                            <a href="/buddies/delete/<%= el.id %>"><button type="button" class="btn btn-danger">Delete</button></a>
+                            <a href="/challenges/add"><button type="button" class="btn btn-success">Add Challenge</button></a>
+                        </td>
+                    </tr>
+                <% }) %>
+                </tbody>    
+            </table>
+        </div>
+    </body> 
+</html>

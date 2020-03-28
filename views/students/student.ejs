@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <%- include('../partials/style') %>
+        <title>Orion Student</title>
+    </head>
+    <body>
+        <%- include('../partials/navbar') %>
+        <div class="d-flex justify-content-around">
+            <h1>ORION STUDENT</h1>
+        </div>
+        <div class="d-flex justify-content-around">
+            <div class="d-flex justify-content-end"></div>
+                <a href="/students/add"><button type="button" class="btn btn-primary">Add Student</button></a>
+            </div>
+        </div>
+        <br>
+        <div class="d-flex justify-content-around">
+            <table class="table table-hover" style="width: 60%;">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Buddy</th>
+                    <th scope="col">Options</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <% students.forEach(el => { %>
+                    <tr>
+                        <td> <%= el.id %> </td>
+                        <td> <%= el.getFullName() %> </td>
+                        <td> <%= el.email %> </td>
+                        <td> <%= el.Buddy.getFullName() %> </td>
+                        <td>
+                            <a href="/students/edit/<%= el.id %>"><button type="button" class="btn btn-info">Edit</button></a> 
+                            <a href="/students/delete/<%= el.id %>/"><button type="button" class="btn btn-danger">Delete</button></a>
+                            <a href="/students/challenges/<%= el.id %>/"><button type="button" class="btn btn-success">View Challenge</button></a>
+                        </td>
+                    </tr>
+                <% }) %>
+                </tbody>    
+            </table>
+        </div>
+    </body> 
+</html>

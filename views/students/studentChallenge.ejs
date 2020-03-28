@@ -1,0 +1,57 @@
+<html>
+<head>
+    <%- include('../partials/style') %>
+    <title>Add Challenge</title>
+</head>
+<body>
+    <%- include('../partials/navbar') %>
+    <div class="d-flex justify-content-around">
+        <h3> <%= students.getFullName() %> </h3>
+    </div>
+    <br>
+    <div class="container col-md-4">
+      <form action="/students/challenges/<%= students.id %> " method="post">
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Add Challenge</label> 
+            <select class="form-control" id="exampleFormControlSelect1" name="ChallengeId">
+                <option selected> -- SELECT --  </option>  
+              <% challenge.forEach(el => { %>
+                <option value="<%= el.id %>"> <%= el.name %>  </option>
+              <% }) %>
+            </select>
+        </div>
+        <div class="d-flex justify-content-around">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+        </form>
+    </div>
+    <br>
+    <br>
+    <div class="d-flex justify-content-around">
+        <table class="table table-hover" style="width: 60%;">
+            <thead>
+              <tr>
+                <th scope="col">Challenge Name</th>
+                <th scope="col">Deadline</th>
+                <th scope="col">Status</th>
+                <th scope="col">Options</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% students.Challenges.forEach(el => { %>
+                    <tr>
+                        <td> <%= el.name %>  </td>
+                        <td> <%= formatDate(el.deadline) %>  </td>
+                        <% if(el.StudentChallenge.isComplete == null){ %>
+                            <td> Undone </td>
+                        <% } else{ %>
+                            <td> Done </td>
+                        <% } %>
+                        <td> <a href=""><button class="btn btn-success" type="submit">Finish</button></a></td>
+                    </tr>
+                <% }) %>
+            </tbody>    
+        </table>
+    </div>
+</body>
+</html>

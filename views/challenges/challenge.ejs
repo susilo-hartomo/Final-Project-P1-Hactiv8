@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <%- include('../partials/style') %>
+        <title>Orion Challenge</title>
+    </head>
+    <body>
+        <%- include('../partials/navbar') %>
+        <div class="d-flex justify-content-around">
+            <h1>ORION CHALLENGE</h1>
+        </div>
+        <br>
+        <div class="d-flex justify-content-around">
+            <table class="table table-hover" style="width: 60%;">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Challenge Name</th>
+                    <th scope="col">Deadline</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <% challenge.forEach(el => { %>
+                        <tr>
+                            <td> <%= el.id %>  </td>
+                            <td> <%= el.name %>  </td>
+                            <td> <%= el.deadline %>  </td>
+                        </tr>
+                    <% }) %>
+                </tbody>    
+            </table>
+        </div>
+    </body> 
+</html>

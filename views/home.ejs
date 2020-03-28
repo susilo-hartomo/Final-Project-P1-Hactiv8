@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <%- include('partials/style') %>
+        <title>Orion Hub</title>
+    </head>
+    <body>
+        <%- include('partials/navbar') %>
+        <div class="d-flex justify-content-around">
+            <h1>ORION HUB</h1>
+        </div>
+        <div class="d-flex justify-content-around">
+            <p>HELLO WORLD! WELCOME TO ORION HUB</p>
+        </div>
+        <br>
+        <form class="container col-md-4" action="/login" method="POST">
+            <% if (error != null) { %>
+                <div class="alert alert-warning" role="alert">
+                    <a><%= error %></a>
+                </div>
+            <% } %>
+            <% if (success != null) { %>
+                <div class="alert alert-success" role="alert">
+                    <a><%= success %></a>
+                </div>
+            <% } %>
+            <br>
+            <div class="d-flex justify-content-around">
+              <h3>Login</h3>
+            </div>
+            <br>
+            <div class="form-group row">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">Username</label>
+              <div class="col-sm-10">
+                <input type="username" name="username"  class="form-control" id="inputEmail3" placeholder="Username" required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+              <div class="col-sm-10">
+                <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Password" required>
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Sign in</button>
+              </div>
+            </div>
+          </form>
+    </body> 
+</html>

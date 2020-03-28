@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "orion-hub",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "tgltnoszgdftfd",
+    "password": "8141b498c46e412c9588fbc4d722b8f2f27637324ea6ca619f4a025ff2a96c52",
+    "database": "d6qamk6r2e57r0",
+    "host": "ec2-34-206-252-187.compute-1.amazonaws.com",
+    "dialect": "postgres"
+  }
+}
