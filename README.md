@@ -1,8 +1,11 @@
 # Final-Project-P1-Hactiv8
 
 Final project di akhir phase 1 yang dikerjakan denang Mas Hamzah
+
 Membuat sebuah aplikasi CRUD tentang Pemberian Tugas Oleh pengajar Kepada Siswa
+
 Didalamnya terdapat :
+
 1. CRUD	
 2. Association Many to many	
 3. Class & Instance Method	
